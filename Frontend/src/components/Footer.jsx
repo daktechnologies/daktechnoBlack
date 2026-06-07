@@ -21,19 +21,59 @@ function Footer() {
 
             <ul className="space-y-4 text-gray-400">
               <li>
-                <NavLink to="/">Home</NavLink>
+                <NavLink
+                  to="/"
+                  onClick={() =>
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    })
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
 
               <li>
-                <NavLink to="/services">Services</NavLink>
+                <NavLink
+                  to="/services"
+                  onClick={() =>
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    })
+                  }
+                >
+                  Services
+                </NavLink>
               </li>
 
               <li>
-                <NavLink to="/solutions">Solutions</NavLink>
+                <NavLink
+                  to="/solutions"
+                  onClick={() =>
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    })
+                  }
+                >
+                  Solutions
+                </NavLink>
               </li>
 
               <li>
-                <NavLink to="/about">About Us</NavLink>
+                <NavLink
+                  to="/about"
+                  onClick={() =>
+                    window.scrollTo({
+                      top: 0,
+                      behavior: "smooth",
+                    })
+                  }
+                >
+                  About Us
+                </NavLink>
               </li>
             </ul>
           </div>

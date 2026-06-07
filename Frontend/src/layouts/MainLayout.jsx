@@ -1,0 +1,21 @@
+// src/layouts/MainLayout.jsx
+
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
+const MainLayout = () => {
+  return (
+    <>
+      <div className="bg-[#02142c] text-white overflow-hidden">
+        <Navbar />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
+};
+
+export default MainLayout;

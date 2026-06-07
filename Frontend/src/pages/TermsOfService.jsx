@@ -1,113 +1,165 @@
-import { useRef, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import PageLoader from '@/components/ui/PageLoader';
-import ScrollTrigger from "gsap/ScrollTrigger";
-    
-const TermsOfService = () => {
-    const container = useRef();
-    const navigate = useNavigate();
-    const [isInitialLoading, setIsInitialLoading] = useState(true);
-
-
-    gsap.registerPlugin(ScrollTrigger);
-
-useGSAP(() => {
-  if (isInitialLoading) return;
-
-  gsap.from(".tos-content > *", {
-    y: 40,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.15,
-    ease: "power3.out",
-  });
-
-}, { scope: container, dependencies: [isInitialLoading] });
-    
-
-    useEffect(() => {
-        // 3000 ka matlab hai 3 seconds (aap ise badha bhi sakte hain)
-        const timer = setTimeout(() => {
-          setIsInitialLoading(false);
-        }, 2000); 
-        return () => clearTimeout(timer);
-      }, []);
-
-    return (
-        <>
-        {isInitialLoading ? <PageLoader /> : null}
-        <div ref={container} className="min-h-screen bg-white py-20 px-6">
-            <div className="max-w-4xl mx-auto tos-content">
-                <button
-                    onClick={() => navigate(-1)}
-                    className="flex items-center gap-2 text-[var(--hds-color-primary)] font-bold mb-10 hover:gap-3 transition-all"
-                >
-                    <ArrowLeft size={20} /> Back
-                </button>
-
-                <h1 className="text-4xl md:text-5xl font-bold text-[var(--hds-color-heading)] mb-4 tracking-tight">
-                    Terms of Service
-                </h1>
-                <p className="text-[var(--hds-color-text)] mb-10 font-medium">Last Updated: 24/02/2026</p>
-
-                <div className="prose prose-slate max-w-none text-[var(--hds-color-text)] space-y-8">
-                    <section>
-                        <h2 className="text-2xl font-bold text-[var(--hds-color-heading)] mb-4">1. Acceptance of Terms</h2>
-                        <p>By using our website or services, you confirm that you have read and agree to be bound by these Terms. If you do not agree, please discontinue using our services.</p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-bold text-[var(--hds-color-heading)] mb-4">2. Eligibility</h2>
-                        <p>You must be at least 18 years old to use our services.</p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-bold text-[var(--hds-color-heading)] mb-4">3. Services Provided</h2>
-                        <p>D A K Technologies offers: IT services, SaaS platform, Custom software development, Server maintenance, and DevOps solutions. We may update, modify, or discontinue any part of our services without prior notice.</p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-bold text-[var(--hds-color-heading)] mb-4">4. User Responsibilities</h2>
-                        <ul className="list-disc pl-6 space-y-2">
-                            <li>Use our services for unlawful activities</li>
-                            <li>Attempt unauthorized access to our systems</li>
-                            <li>Upload harmful files, malware, or viruses</li>
-                            <li>Copy, modify, or distribute our content without permission</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-bold text-[var(--hds-color-heading)] mb-4">5. Intellectual Property Rights</h2>
-                        <p>All content, designs, logos, code, and materials on www.daktechno.com are the property of D A K Technologies. Reproduction or distribution without permission is prohibited.</p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-bold text-[var(--hds-color-heading)] mb-4">6. Limitation of Liability</h2>
-                        <p>To the fullest extent permitted by law, we are not liable for indirect, incidental, or consequential damages. Total liability is limited to the amount paid by you in the last 3 months, if applicable.</p>
-                    </section>
-
-                    <section>
-                        <h2 className="text-2xl font-bold text-[var(--hds-color-heading)] mb-4">7. Governing Law</h2>
-                        <p>These Terms are governed by the laws of India. All disputes will fall under the jurisdiction of Nagpur, Maharashtra courts.</p>
-                    </section>
-                </div>
-
-                <div className="mt-16 p-8 bg-gray-50 rounded-2xl border border-gray-100">
-                    <h3 className="text-xl font-bold text-[var(--hds-color-heading)] mb-4">Contact Information</h3>
-                    <p className="text-[var(--hds-color-text)]">
-                        <strong>D A K Technologies</strong><br />
-                        Sadoday Palace, Gaddigodam, Nagpur–01<br />
-                        Email: support@daktechno.com<br />
-                        Website: www.daktechno.com
-                    </p>
-                </div>
-            </div>
+export default function TermsOfService() {
+  return (
+    <>
+      {/* HERO SECTION */}
+      <section className="max-w-7xl mx-auto px-6 md:px-16 py-20">
+        <div>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Terms of Service
+          </h1>
+          <p className="text-lg text-gray-400">Last Updated: January 2024</p>
         </div>
-        </>
-    );
-};
+      </section>
 
-export default TermsOfService;
+      {/* CONTENT SECTION */}
+      <section className="max-w-4xl mx-auto px-6 md:px-16 py-16 mb-20">
+        {/* Introduction */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">Introduction</h2>
+          <p className="text-gray-300 leading-relaxed">
+            By accessing or using our website, you agree to be bound by these
+            Terms of Service. If you do not agree, please discontinue use
+            immediately.
+          </p>
+        </div>
+
+        {/* 1. Definitions */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">1. Definitions</h2>
+          <p className="text-gray-300 leading-relaxed">
+            "Company" refers to DAK Technologies. "Client" or "You" refers to
+            users of the site or services. "Services" refers to all solutions
+            provided by DAK Technologies.
+          </p>
+        </div>
+
+        {/* 2. Website Use and Conduct */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            2. Website Use and Conduct
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+            You agree to use the site lawfully. Prohibited: unauthorized access,
+            transmitting malware, scraping content without permission.
+          </p>
+        </div>
+
+        {/* 3. Intellectual Property Rights */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            3. Intellectual Property Rights
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+            All website content, logos, and design are our exclusive IP. Project
+            deliverable IP transfers to the Client upon final payment, per a
+            separate agreement.
+          </p>
+        </div>
+
+        {/* 4. Services and Engagements */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            4. Services and Engagements
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+            Proposals are informational and non-binding. A formal engagement
+            begins only upon a signed written agreement.
+          </p>
+        </div>
+
+        {/* 5. Limitation of Liability */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            5. Limitation of Liability
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+            We are not liable for indirect or consequential damages. Our total
+            liability is limited to the amount paid for the specific service.
+          </p>
+        </div>
+
+        {/* 6. No Warranties */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            6. No Warranties
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+            The website is provided "as is" without warranties of any kind.
+          </p>
+        </div>
+
+        {/* 7. Indemnification */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            7. Indemnification
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+            You agree to indemnify us against claims arising from your violation
+            of these Terms.
+          </p>
+        </div>
+
+        {/* 8. Third-Party Links and Tools */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            8. Third-Party Links and Tools
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+            We are not responsible for third-party content or tools linked on
+            our site.
+          </p>
+        </div>
+
+        {/* 9. Termination */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">9. Termination</h2>
+          <p className="text-gray-300 leading-relaxed">
+            We reserve the right to terminate access for conduct violating these
+            Terms.
+          </p>
+        </div>
+
+        {/* 10. Governing Law */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            10. Governing Law
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+            Governed by the laws of India/Karnataka. Disputes subject to courts
+            in Bengaluru.
+          </p>
+        </div>
+
+        {/* 11. Changes to Terms */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            11. Changes to Terms
+          </h2>
+          <p className="text-gray-300 leading-relaxed">
+            Changes are effective upon posting. Continued use signifies
+            acceptance.
+          </p>
+        </div>
+
+        {/* 12. Contact Information */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-bold text-white mb-4">
+            12. Contact Information
+          </h2>
+          <p className="text-gray-300 leading-relaxed mb-4">
+            For any questions regarding these Terms of Service, please contact
+            us at:
+          </p>
+          <div className="text-gray-300 space-y-2">
+            <p>Email: contact@daktechno.com, info@daktechno.com</p>
+            <p>Phone: +91 9130567772, +91 8446170543</p>
+            <p>
+              Address: 716, Virat Nagar, Begur Road, Bommanahalli, Bengaluru -
+              560068
+            </p>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

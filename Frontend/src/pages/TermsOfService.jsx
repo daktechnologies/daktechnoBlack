@@ -7,12 +7,12 @@ export default function TermsOfService() {
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Terms of Service
           </h1>
-          <p className="text-lg text-gray-400">Last Updated: January 2024</p>
+          <p className="text-lg text-gray-400">Last Updated: January 2026</p>
         </div>
       </section>
 
       {/* CONTENT SECTION */}
-      <section className="max-w-4xl mx-auto px-6 md:px-16 py-16 mb-20">
+      <section className="max-w-4xl mx-auto px-6 md:px-16 mb-20">
         {/* Introduction */}
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-white mb-4">Introduction</h2>

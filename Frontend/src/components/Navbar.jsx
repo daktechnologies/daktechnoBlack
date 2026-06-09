@@ -1,5 +1,14 @@
 import React from "react";
-import { Menu } from "lucide-react";
+import {
+  Menu,
+  Home,
+  Cog,
+  Lightbulb,
+  Building2,
+  Briefcase,
+  User,
+  Users,
+} from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
@@ -17,9 +26,12 @@ function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-cyan-400" : "text-white"
+              isActive
+                ? "text-cyan-400 flex items-center gap-2"
+                : "text-white flex items-center gap-2"
             }
           >
+            <Home size={18} />
             <li>Home</li>
           </NavLink>
 
@@ -27,9 +39,12 @@ function Navbar() {
           <NavLink
             to="/services"
             className={({ isActive }) =>
-              isActive ? "text-cyan-400" : "text-white"
+              isActive
+                ? "text-cyan-400 flex items-center gap-2"
+                : "text-white flex items-center gap-2"
             }
           >
+            <Cog size={18} />
             <li>Services</li>
           </NavLink>
 
@@ -37,9 +52,12 @@ function Navbar() {
           <NavLink
             to="/solutions"
             className={({ isActive }) =>
-              isActive ? "text-cyan-400" : "text-white"
+              isActive
+                ? "text-cyan-400 flex items-center gap-2"
+                : "text-white flex items-center gap-2"
             }
           >
+            <Lightbulb size={18} />
             <li>Solutions</li>
           </NavLink>
 
@@ -47,9 +65,12 @@ function Navbar() {
           <NavLink
             to="/industries"
             className={({ isActive }) =>
-              isActive ? "text-cyan-400" : "text-white"
+              isActive
+                ? "text-cyan-400 flex items-center gap-2"
+                : "text-white flex items-center gap-2"
             }
           >
+            <Building2 size={18} />
             <li>Industries</li>
           </NavLink>
 
@@ -57,9 +78,12 @@ function Navbar() {
           <NavLink
             to="/portfolio"
             className={({ isActive }) =>
-              isActive ? "text-cyan-400" : "text-white"
+              isActive
+                ? "text-cyan-400 flex items-center gap-2"
+                : "text-white flex items-center gap-2"
             }
           >
+            <Briefcase size={18} />
             <li>Portfolio</li>
           </NavLink>
 
@@ -67,9 +91,12 @@ function Navbar() {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              isActive ? "text-cyan-400" : "text-white"
+              isActive
+                ? "text-cyan-400 flex items-center gap-2"
+                : "text-white flex items-center gap-2"
             }
           >
+            <User size={18} />
             <li>About Us</li>
           </NavLink>
 
@@ -77,9 +104,12 @@ function Navbar() {
           <NavLink
             to="/careers"
             className={({ isActive }) =>
-              isActive ? "text-cyan-400" : "text-white"
+              isActive
+                ? "text-cyan-400 flex items-center gap-2"
+                : "text-white flex items-center gap-2"
             }
           >
+            <Users size={18} />
             <li>Careers</li>
           </NavLink>
         </ul>

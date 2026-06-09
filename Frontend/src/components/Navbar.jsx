@@ -17,8 +17,10 @@ function Navbar() {
       {/* NAVBAR */}
       <nav className="flex items-center justify-between px-6 md:px-16 py-5 bg-[#03152f] border-b border-white/10">
         <div>
-          <h1 className="text-4xl font-bold tracking-wider">D A K</h1>
-          <p className="text-xs tracking-[4px]">TECHNOLOGIES</p>
+          <NavLink to="/">
+            <h1 className="text-4xl font-bold tracking-wider">D A K</h1>
+            <p className="text-xs tracking-[4px]">TECHNOLOGIES</p>
+          </NavLink>
         </div>
 
         <ul className="hidden lg:flex gap-10 text-sm font-medium">
@@ -28,7 +30,7 @@ function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? "text-cyan-400 flex items-center gap-2"
-                : "text-white flex items-center gap-2"
+                : "text-white flex items-center gap-2 hover:text-cyan-400 transition"
             }
           >
             <Home size={18} />
@@ -41,7 +43,7 @@ function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? "text-cyan-400 flex items-center gap-2"
-                : "text-white flex items-center gap-2"
+                : "text-white flex items-center gap-2 hover:text-cyan-400 transition"
             }
           >
             <Cog size={18} />
@@ -54,7 +56,7 @@ function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? "text-cyan-400 flex items-center gap-2"
-                : "text-white flex items-center gap-2"
+                : "text-white flex items-center gap-2 hover:text-cyan-400 transition"
             }
           >
             <Lightbulb size={18} />
@@ -67,7 +69,7 @@ function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? "text-cyan-400 flex items-center gap-2"
-                : "text-white flex items-center gap-2"
+                : "text-white flex items-center gap-2 hover:text-cyan-400 transition"
             }
           >
             <Building2 size={18} />
@@ -80,7 +82,7 @@ function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? "text-cyan-400 flex items-center gap-2"
-                : "text-white flex items-center gap-2"
+                : "text-white flex items-center gap-2 hover:text-cyan-400 transition"
             }
           >
             <Briefcase size={18} />
@@ -93,7 +95,7 @@ function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? "text-cyan-400 flex items-center gap-2"
-                : "text-white flex items-center gap-2"
+                : "text-white flex items-center gap-2 hover:text-cyan-400 transition"
             }
           >
             <User size={18} />
@@ -106,7 +108,7 @@ function Navbar() {
             className={({ isActive }) =>
               isActive
                 ? "text-cyan-400 flex items-center gap-2"
-                : "text-white flex items-center gap-2"
+                : "text-white flex items-center gap-2 hover:text-cyan-400 transition"
             }
           >
             <Users size={18} />
